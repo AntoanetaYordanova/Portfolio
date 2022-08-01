@@ -1,6 +1,34 @@
-*, *::after, *::before {
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600&display=swap');
+$menu-font-size: 1rem;
+
+$main-color-light: rgb(236, 226, 208);
+$main-color-dark: rgb(213, 185, 178);
+$secondary-color-light: rgb(191, 181, 175);
+$secondary-color-dark: rgb(162, 103, 105);
+$accent-color: rgb(84, 75, 92);
+
+$headings-font-style: 'Source Serif Pro', serif;
+$body-font-style: 'Rubik', sans-serif;
+
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
+    font-family: $body-font-style;
+    box-sizing: border-box;
+}
+
+body {
+    max-height: 100vh;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 .header-wrapper {
@@ -8,20 +36,96 @@
     background: url('./images/safar-safarov-MSN8TFhJ0is-unsplash.jpg') fixed;
     background-size: cover;
     background-position: center;
+    position: relative;
 
-    .nav-wrapper {
-        position: relative;
+    nav {
+        min-height: 70px;
+        background-color: rgba(236, 226, 208, 0);
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding-top: 20px;
 
-        nav{
-            min-height: 70px;
-            background-color: #ece2d0;
+        .nav-background {
+            background: linear-gradient(
+                180deg,
+                rgba(144, 132, 135, 0.4598214285714286) 0%,
+                rgba(147, 134, 137, 1) 100%
+            );
+            transition: all ease-in-out 0.3s;
+            width: 100%;
+            position: absolute;
+            top: -100%;
+            height: 70px;
         }
 
         ul {
+            display: flex;
+            gap: 100px;
+            margin: 0 auto;
+        }
+
+        span {
+            position: relative;
+            z-index: 1;
+        }
+
+        a {
+            color: $secondary-color-dark;
+        }
+
+        li {
+            position: relative;
+            border: 2px solid rgb(162, 103, 105);
+            font-size: $menu-font-size;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(
+                142deg,
+                rgba(213, 186, 179, 1) 0%,
+                rgba(236, 226, 208, 1) 100%
+            );
+            padding: 5px 10px;
+            border-radius: 20px;
+            overflow: hidden;
+            height: fit-content;
+        }
+
+        li:after {
+            content: '';
             position: absolute;
+            left: 0;
+            top: 0;
+            height: 490%;
+            width: 140%;
+            background: $secondary-color-light;
+            -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+            -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+            transform: translateX(-98%) translateY(-25%) rotate(45deg);
+        }
+
+        li:nth-child(1)::after,
+        li:nth-child(2)::after {
+            left: -30px;
             top: 0;
         }
-    }   
+
+        li:hover:after {
+            -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+            transform: translateX(-9%) translateY(-25%) rotate(45deg);
+        }
+
+        li.active::after {
+            -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+            transform: translateX(-9%) translateY(-25%) rotate(45deg);
+        }
+    }
+
+    .nav-background.active {
+       top: 0;
+    }
 }
 
 .img-wrapper {
@@ -32,7 +136,8 @@
     }
 }
 
-.link-wrapper, .svg-wrapper {
+.link-wrapper,
+.svg-wrapper {
     width: 30px;
 
     img {

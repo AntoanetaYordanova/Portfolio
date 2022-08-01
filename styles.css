@@ -1,6 +1,24 @@
-*, *::after, *::before {
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600&display=swap");
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
+  font-family: "Rubik", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  max-height: 100vh;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .header-wrapper {
@@ -8,19 +26,97 @@
   background: url("./images/safar-safarov-MSN8TFhJ0is-unsplash.jpg") fixed;
   background-size: cover;
   background-position: center;
-}
-
-.header-wrapper .nav-wrapper {
   position: relative;
 }
 
-.header-wrapper .nav-wrapper nav {
+.header-wrapper nav {
   min-height: 70px;
-  background-color: #ece2d0;
+  background-color: rgba(236, 226, 208, 0);
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding-top: 20px;
 }
 
-.header-wrapper .nav-wrapper ul {
+.header-wrapper nav .nav-background {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(144, 132, 135, 0.459821)), to(#938689));
+  background: linear-gradient(180deg, rgba(144, 132, 135, 0.459821) 0%, #938689 100%);
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+  width: 100%;
   position: absolute;
+  top: -100%;
+  height: 70px;
+}
+
+.header-wrapper nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 100px;
+  margin: 0 auto;
+}
+
+.header-wrapper nav span {
+  position: relative;
+  z-index: 1;
+}
+
+.header-wrapper nav a {
+  color: #a26769;
+}
+
+.header-wrapper nav li {
+  position: relative;
+  border: 2px solid #a26769;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(142deg, #d5bab3 0%, #ece2d0 100%);
+  padding: 5px 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.header-wrapper nav li:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #bfb5af;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.header-wrapper nav li:nth-child(1)::after,
+.header-wrapper nav li:nth-child(2)::after {
+  left: -30px;
+  top: 0;
+}
+
+.header-wrapper nav li:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.header-wrapper nav li.active::after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.header-wrapper .nav-background.active {
   top: 0;
 }
 
@@ -32,11 +128,13 @@
   width: 100%;
 }
 
-.link-wrapper, .svg-wrapper {
+.link-wrapper,
+.svg-wrapper {
   width: 30px;
 }
 
-.link-wrapper img, .svg-wrapper img {
+.link-wrapper img,
+.svg-wrapper img {
   width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
