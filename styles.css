@@ -27,12 +27,14 @@ a {
   background-size: cover;
   background-position: center;
   position: relative;
+  margin-bottom: 100px;
 }
 
 .header-wrapper nav {
   min-height: 70px;
   background-color: rgba(236, 226, 208, 0);
   position: fixed;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,8 +48,8 @@ a {
 .header-wrapper nav .nav-background {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(144, 132, 135, 0.459821)), to(#938689));
   background: linear-gradient(180deg, rgba(144, 132, 135, 0.459821) 0%, #938689 100%);
-  -webkit-transition: all ease-in-out 0.3s;
-  transition: all ease-in-out 0.3s;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
   width: 100%;
   position: absolute;
   top: -100%;
@@ -72,6 +74,7 @@ a {
 }
 
 .header-wrapper nav li {
+  cursor: pointer;
   position: relative;
   border: 2px solid #a26769;
   font-size: 1rem;
@@ -120,20 +123,63 @@ a {
   top: 0;
 }
 
-.img-wrapper {
-  width: 200px;
+.personal-info {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  place-items: center;
+  position: relative;
 }
 
-.img-wrapper img {
+.personal-info .img-wrapper {
+  background-image: url("./images/my-photo.jpg");
+  background-size: cover;
+  background-position-y: -11px;
+  width: 185px;
+  height: 185px;
+  border-radius: 50%;
+  position: absolute;
+  top: -105%;
+}
+
+.personal-info h1 {
+  color: #a26769;
+  font-size: 3.3rem;
+}
+
+.personal-info h2 {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.personal-info .contact-links-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+}
+
+.personal-info .contact-links-section .link-wrapper {
+  width: 35px;
+}
+
+.personal-info .contact-links-section .link-wrapper svg {
   width: 100%;
+  fill: #a26769;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.link-wrapper,
+.personal-info .contact-links-section .link-wrapper svg:hover {
+  fill: #d5b9b2;
+}
+
 .svg-wrapper {
   width: 30px;
 }
 
-.link-wrapper img,
 .svg-wrapper img {
   width: 100%;
 }

@@ -13,7 +13,7 @@ function start() {
     function scrollHandler(ev) {
         const y = window.scrollY;
 
-        if (y > 200) {
+        if (y > 0) {
             nav.classList.add('active');
         } else if (y == 0) {
             nav.classList.remove('active');

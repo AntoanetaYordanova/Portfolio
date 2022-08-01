@@ -31,17 +31,21 @@ a {
     text-decoration: none;
 }
 
+//HEADER
+
 .header-wrapper {
     height: 60vh;
     background: url('./images/safar-safarov-MSN8TFhJ0is-unsplash.jpg') fixed;
     background-size: cover;
     background-position: center;
     position: relative;
+    margin-bottom: 100px;
 
     nav {
         min-height: 70px;
         background-color: rgba(236, 226, 208, 0);
         position: fixed;
+        z-index: 10;
         display: flex;
         justify-content: center;
         width: 100%;
@@ -53,7 +57,7 @@ a {
                 rgba(144, 132, 135, 0.4598214285714286) 0%,
                 rgba(147, 134, 137, 1) 100%
             );
-            transition: all ease-in-out 0.3s;
+            transition: all ease-in-out 0.5s;
             width: 100%;
             position: absolute;
             top: -100%;
@@ -76,6 +80,7 @@ a {
         }
 
         li {
+            cursor: pointer;
             position: relative;
             border: 2px solid rgb(162, 103, 105);
             font-size: $menu-font-size;
@@ -128,15 +133,56 @@ a {
     }
 }
 
-.img-wrapper {
-    width: 200px;
+//PERSONAL INFO
 
-    img {
-        width: 100%;
+.personal-info {
+    display: grid;
+    align-items: center;
+    place-items: center;
+    position: relative;
+
+    .img-wrapper {
+        background-image: url('./images/my-photo.jpg');
+        background-size: cover;
+        background-position-y: -11px;
+        width: 185px;
+        height: 185px;
+        border-radius: 50%;
+        position: absolute;
+        top: -105%;
     }
+
+    h1 {
+        color: $secondary-color-dark;
+        font-size: 3.3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+    
+    .contact-links-section {
+        display: flex;
+        gap: 50px;
+
+        .link-wrapper {
+            width: 35px;
+            svg {
+                width: 100%;
+                fill: $secondary-color-dark;
+                transition: 0.3s;
+            }
+
+            svg:hover {
+                fill: $main-color-dark;
+            }
+        }
+    }    
 }
 
-.link-wrapper,
+
+
 .svg-wrapper {
     width: 30px;
 
@@ -144,3 +190,4 @@ a {
         width: 100%;
     }
 }
+
