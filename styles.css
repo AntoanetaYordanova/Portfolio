@@ -1,0 +1,42 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+}
+
+.header-wrapper {
+  height: 60vh;
+  background: url("./images/safar-safarov-MSN8TFhJ0is-unsplash.jpg") fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.header-wrapper .nav-wrapper {
+  position: relative;
+}
+
+.header-wrapper .nav-wrapper nav {
+  min-height: 70px;
+  background-color: #ece2d0;
+}
+
+.header-wrapper .nav-wrapper ul {
+  position: absolute;
+  top: 0;
+}
+
+.img-wrapper {
+  width: 200px;
+}
+
+.img-wrapper img {
+  width: 100%;
+}
+
+.link-wrapper, .svg-wrapper {
+  width: 30px;
+}
+
+.link-wrapper img, .svg-wrapper img {
+  width: 100%;
+}
+/*# sourceMappingURL=styles.css.map */

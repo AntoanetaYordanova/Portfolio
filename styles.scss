@@ -1,0 +1,41 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+}
+
+.header-wrapper {
+    height: 60vh;
+    background: url('./images/safar-safarov-MSN8TFhJ0is-unsplash.jpg') fixed;
+    background-size: cover;
+    background-position: center;
+
+    .nav-wrapper {
+        position: relative;
+
+        nav{
+            min-height: 70px;
+            background-color: #ece2d0;
+        }
+
+        ul {
+            position: absolute;
+            top: 0;
+        }
+    }   
+}
+
+.img-wrapper {
+    width: 200px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.link-wrapper, .svg-wrapper {
+    width: 30px;
+
+    img {
+        width: 100%;
+    }
+}
