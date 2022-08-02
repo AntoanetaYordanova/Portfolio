@@ -8,15 +8,17 @@ function start() {
         scrollHandler();
     };
 
-    navButtons.forEach((el) => el.addEventListener('click', navButtonHandler));
+    navButtons.forEach((e) => e.addEventListener('click', navButtonHandler));
 
-    function scrollHandler(ev) {
+    function scrollHandler() {
         const y = window.scrollY;
 
         if (y > 0) {
             nav.classList.add('active');
+            navButtons.forEach(e => e.classList.add('scroll'));
         } else if (y == 0) {
             nav.classList.remove('active');
+            navButtons.forEach(e => e.classList.remove('scroll'));
         }
     }
 
