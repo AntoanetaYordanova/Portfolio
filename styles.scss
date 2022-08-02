@@ -2,7 +2,7 @@
 $menu-font-size: 1rem;
 $menu-font-size-small: 0.9rem;
 $body-font-size: 1.7rem;
-$section-heading-font-size: 2rem;
+$section-heading-font-size: 2.3rem;
 
 $main-color-light: rgb(236, 226, 208);
 $main-color-dark: rgb(213, 185, 178);
@@ -168,16 +168,16 @@ header {
         height: 185px;
         border-radius: 50%;
         position: absolute;
-        top: -88%;
+        top: -83%;
     }
 
     h1 {
         color: $secondary-color-dark;
-        font-size: 3.8rem;
+        font-size: 4.2rem;
     }
 
     h2 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         margin: 30px 0;
     }
 
@@ -193,8 +193,12 @@ header {
                 transition: 0.3s;
             }
 
-            svg:hover {
-                fill: $main-color-dark;
+            svg.linkedin:hover {
+                fill: rgb(10, 102, 194);;
+            }
+
+            svg.github:hover {
+                fill: rgb(0,0,0);
             }
         }
     }
@@ -203,12 +207,13 @@ header {
 //ABOUT SECTION
 
 .about {
+    position: relative;
     background: linear-gradient(
         182deg,
         rgba(207, 177, 172, 1) 0%,
         rgba(233, 219, 210, 1) 100%
     );
-    padding: 5% 10%;
+    padding: 4% 15%;
     text-align: center;
 
     h3 {
@@ -221,9 +226,20 @@ header {
     }
 }
 
+.about::after {
+    width: 100%;
+    content: '';
+    height: 50px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    border-bottom: 4px dashed rgb(230, 215, 206);
+}
+
 //SKILLS SECTION
 
 .skills {
+    position: relative;
     h3 {
         @include section-heading;
         text-align: center;
@@ -242,7 +258,7 @@ header {
         grid-template-columns: 2fr 1fr;
         gap: 50px;
         margin: 0 auto;
-        width: 50%;
+        width: 58%;
     }
 
     .skill-section {
@@ -259,6 +275,10 @@ header {
             svg {
                 width: 70px;
                 fill: $secondary-color-dark;
+            }
+
+            li {
+                color: rgb(78, 75, 75);
             }
         }
     }
@@ -316,3 +336,230 @@ header {
         }
     }
 }
+
+.projects {
+    position: relative;
+    margin-top: 100px;
+    background: linear-gradient(
+        182deg,
+        rgba(233, 219, 210, 1) 0%,
+        rgba(207, 177, 172, 1) 100%
+    );
+    padding: 5% 10%;
+
+    h3 {
+        @include section-heading;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .project-cards-wrapper {
+        display: flex;
+        justify-content: space-around;
+        gap: 50px;
+        transition: 0.4s;
+
+        .project-card {
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 9px;
+            transition: 0.3s;
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+                border-radius: 9px;
+                transition: 0.3s;
+            }
+
+            div {
+                position: absolute;
+                bottom: 25px;
+                width: 100%;
+                text-align: center;
+                transform: translateY(100px) ;
+                transition: 0.5s;
+
+                svg {
+                    width: 20px;
+                    position: absolute;
+                    top: 9px;
+                    left: 5px;
+                    fill: #f1ede9;
+                    transition: 0.4s;
+                }
+
+                a {
+                    background: rgb(69, 64, 69);
+                    padding: 10px;
+                    padding-left: 30px;
+                    position: relative;
+                    color: #f1ede9;
+                    border-radius: 8px;
+                    transition: 1s;
+                    box-shadow: 0px -1px 12px -7px rgba(0, 0, 0, 1);
+                }
+
+                a:nth-child(1) {
+                    margin-right: 20px;
+                }
+
+                a:hover {
+                    background: #f1ede9;
+                    color: rgb(69, 64, 69);
+
+                    svg {
+                        fill: rgb(69, 64, 69);
+                    }
+                }
+            }
+        }
+
+        .project-card:hover {
+            box-shadow: 1px 1px 14px 0px rgba(0,0,0,0.75);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+            opacity: 0.7;
+        }
+
+        .project-card:hover div {
+            transform: translate(0px);
+            animation-name: buttons;
+            animation-duration: 1s;
+        }
+    }
+}
+
+.projects::before {
+    width: 100%;
+    content: '';
+    height: 50px;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    border-top: 4px dashed rgb(230, 215, 206);
+}
+
+//CESTIFICATES
+
+.certificates {
+    display: flex;
+    justify-content: center;
+    padding: 5% 0;
+    h3 {
+        @include section-heading;
+        text-align: center;
+        color: $secondary-color-dark;
+        margin-bottom: 50px;    
+    }
+
+    .links-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 50px;
+
+        a {
+            color: rgb(89, 83, 89);
+            font-size: 1.7rem;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: $secondary-color-dark;
+        }
+
+        a::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            display: block;
+            background: $secondary-color-dark;
+            transition: 0.6s;
+        }
+
+        a:hover {
+            &::after {
+                width: 100%;
+            }
+           
+        }
+    }
+}
+
+//CONTACTS
+
+.contacts {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+
+    .contacts-wrapper {
+        padding: 3% 10%;
+        // text-align: center;
+        border-radius: 8px;
+        background: linear-gradient(180deg, rgba(233,219,210,1) 0%, rgba(218,196,189,1) 100%);
+        width: 40%;
+        line-height: 40px;
+    }
+
+    a, p {
+        position: relative;
+    }
+    
+    p:nth-child(1), p:nth-child(2) {
+        padding-left: 40px;
+    }
+
+    p:nth-child(1) {
+       svg {
+        top: 5px;
+       }
+    }
+
+    svg {
+        width: 30px;
+        transition: 0.3s;
+        position: absolute;
+    }
+
+    svg {
+        left: 0px;
+    }
+
+    svg.linkedin {
+        left: 5px;
+    }
+
+    svg.linkedin:hover {
+        fill: rgb(10, 102, 194);
+    }
+
+
+
+    h3 {
+        @include section-heading;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+//FOOTER    
+
+footer {
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(191, 188, 188);
+    background: rgb(131, 120, 128);
+    padding: 20px;
+}
+
+
+

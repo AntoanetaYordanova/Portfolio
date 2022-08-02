@@ -151,16 +151,16 @@ header .header-wrapper .nav-background.active {
   height: 185px;
   border-radius: 50%;
   position: absolute;
-  top: -88%;
+  top: -83%;
 }
 
 .personal-info h1 {
   color: #a26769;
-  font-size: 3.8rem;
+  font-size: 4.2rem;
 }
 
 .personal-info h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 30px 0;
 }
 
@@ -182,19 +182,24 @@ header .header-wrapper .nav-background.active {
   transition: 0.3s;
 }
 
-.personal-info .contact-links-section .link-wrapper svg:hover {
-  fill: #d5b9b2;
+.personal-info .contact-links-section .link-wrapper svg.linkedin:hover {
+  fill: #0a66c2;
+}
+
+.personal-info .contact-links-section .link-wrapper svg.github:hover {
+  fill: black;
 }
 
 .about {
+  position: relative;
   background: linear-gradient(182deg, #cfb1ac 0%, #e9dbd2 100%);
-  padding: 5% 10%;
+  padding: 4% 15%;
   text-align: center;
 }
 
 .about h3 {
   margin-bottom: 25px;
-  font-size: 2rem;
+  font-size: 2.3rem;
   text-transform: uppercase;
 }
 
@@ -203,8 +208,22 @@ header .header-wrapper .nav-background.active {
   font-size: 1.7rem;
 }
 
+.about::after {
+  width: 100%;
+  content: '';
+  height: 50px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  border-bottom: 4px dashed #e6d7ce;
+}
+
+.skills {
+  position: relative;
+}
+
 .skills h3 {
-  font-size: 2rem;
+  font-size: 2.3rem;
   text-transform: uppercase;
   text-align: center;
   margin: 50px 0;
@@ -228,7 +247,7 @@ header .header-wrapper .nav-background.active {
       grid-template-columns: 2fr 1fr;
   gap: 50px;
   margin: 0 auto;
-  width: 50%;
+  width: 58%;
 }
 
 .skills .skill-section {
@@ -245,6 +264,10 @@ header .header-wrapper .nav-background.active {
 .skills .skill-section .logo-section svg {
   width: 70px;
   fill: #a26769;
+}
+
+.skills .skill-section .logo-section li {
+  color: #4e4b4b;
 }
 
 .skills .professional {
@@ -317,5 +340,252 @@ header .header-wrapper .nav-background.active {
 
 .skills .personal li::marker {
   color: #a26769;
+}
+
+.projects {
+  position: relative;
+  margin-top: 100px;
+  background: linear-gradient(182deg, #e9dbd2 0%, #cfb1ac 100%);
+  padding: 5% 10%;
+}
+
+.projects h3 {
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.projects .project-cards-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 50px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.projects .project-cards-wrapper .project-card {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 9px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.projects .project-cards-wrapper .project-card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  border-radius: 9px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.projects .project-cards-wrapper .project-card div {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  text-align: center;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.projects .project-cards-wrapper .project-card div svg {
+  width: 20px;
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  fill: #f1ede9;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.projects .project-cards-wrapper .project-card div a {
+  background: #454045;
+  padding: 10px;
+  padding-left: 30px;
+  position: relative;
+  color: #f1ede9;
+  border-radius: 8px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-box-shadow: 0px -1px 12px -7px black;
+          box-shadow: 0px -1px 12px -7px black;
+}
+
+.projects .project-cards-wrapper .project-card div a:nth-child(1) {
+  margin-right: 20px;
+}
+
+.projects .project-cards-wrapper .project-card div a:hover {
+  background: #f1ede9;
+  color: #454045;
+}
+
+.projects .project-cards-wrapper .project-card div a:hover svg {
+  fill: #454045;
+}
+
+.projects .project-cards-wrapper .project-card:hover {
+  -webkit-box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.75);
+}
+
+.projects .project-cards-wrapper .project-card:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 0.7;
+}
+
+.projects .project-cards-wrapper .project-card:hover div {
+  -webkit-transform: translate(0px);
+          transform: translate(0px);
+  -webkit-animation-name: buttons;
+          animation-name: buttons;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.projects::before {
+  width: 100%;
+  content: '';
+  height: 50px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  border-top: 4px dashed #e6d7ce;
+}
+
+.certificates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5% 0;
+}
+
+.certificates h3 {
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #a26769;
+  margin-bottom: 50px;
+}
+
+.certificates .links-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 50px;
+}
+
+.certificates .links-wrapper a {
+  color: #595359;
+  font-size: 1.7rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.certificates .links-wrapper a:hover {
+  color: #a26769;
+}
+
+.certificates .links-wrapper a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  display: block;
+  background: #a26769;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.certificates .links-wrapper a:hover::after {
+  width: 100%;
+}
+
+.contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5%;
+}
+
+.contacts .contacts-wrapper {
+  padding: 3% 10%;
+  border-radius: 8px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e9dbd2), to(#dac4bd));
+  background: linear-gradient(180deg, #e9dbd2 0%, #dac4bd 100%);
+  width: 40%;
+  line-height: 40px;
+}
+
+.contacts a, .contacts p {
+  position: relative;
+}
+
+.contacts p:nth-child(1), .contacts p:nth-child(2) {
+  padding-left: 40px;
+}
+
+.contacts p:nth-child(1) svg {
+  top: 5px;
+}
+
+.contacts svg {
+  width: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.contacts svg {
+  left: 0px;
+}
+
+.contacts svg.linkedin {
+  left: 5px;
+}
+
+.contacts svg.linkedin:hover {
+  fill: #0a66c2;
+}
+
+.contacts h3 {
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contacts p {
+  font-size: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #bfbcbc;
+  background: #837880;
+  padding: 20px;
 }
 /*# sourceMappingURL=styles.css.map */
