@@ -535,7 +535,7 @@ header .header-wrapper .nav-background.active {
 }
 
 .contacts .contacts-wrapper {
-  padding: 3% 10%;
+  padding: 3% 8%;
   border-radius: 8px;
   background: -webkit-gradient(linear, left top, left bottom, from(#e9dbd2), to(#dac4bd));
   background: linear-gradient(180deg, #e9dbd2 0%, #dac4bd 100%);
