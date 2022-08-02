@@ -9,6 +9,10 @@
           box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   max-height: 100vh;
 }
@@ -72,11 +76,11 @@ header .header-wrapper nav span {
   z-index: 1;
 }
 
-header .header-wrapper nav a {
+header .header-wrapper nav li {
   color: #a26769;
 }
 
-header .header-wrapper nav li {
+header .header-wrapper nav a {
   cursor: pointer;
   position: relative;
   border: 2px solid #a26769;
@@ -94,11 +98,11 @@ header .header-wrapper nav li {
   transition: 0.3s;
 }
 
-header .header-wrapper nav li.scroll {
+header .header-wrapper nav a.scroll {
   font-size: 0.9rem;
 }
 
-header .header-wrapper nav li:after {
+header .header-wrapper nav a:after {
   content: '';
   position: absolute;
   left: 0;
@@ -113,18 +117,18 @@ header .header-wrapper nav li:after {
   border: 2px solid #bfb5af;
 }
 
-header .header-wrapper nav li:nth-child(1)::after,
-header .header-wrapper nav li:nth-child(2)::after {
+header .header-wrapper nav a:nth-child(1)::after,
+header .header-wrapper nav a:nth-child(2)::after {
   left: -30px;
   top: 0;
 }
 
-header .header-wrapper nav li:hover:after {
+header .header-wrapper nav a:hover:after {
   -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
-header .header-wrapper nav li.active::after {
+header .header-wrapper nav a.active::after {
   -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }

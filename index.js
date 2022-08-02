@@ -1,7 +1,7 @@
 start();
 
 function start() {
-    const navButtons = document.querySelectorAll('li');
+    const navButtons = document.querySelectorAll('ul a');
     const nav = document.querySelector('.nav-background');
 
     window.onscroll = function () {
