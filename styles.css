@@ -68,6 +68,8 @@ header .header-wrapper nav {
           justify-content: center;
   width: 100%;
   padding-top: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 header .header-wrapper nav .nav-background {

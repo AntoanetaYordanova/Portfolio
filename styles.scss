@@ -66,7 +66,6 @@ a {
 
 header {
     min-height: 100vh;
-
     .header-wrapper {
         height: 60vh;
         background: url('./images/safar-safarov-MSN8TFhJ0is-unsplash.jpg') fixed;
@@ -83,7 +82,7 @@ header {
             justify-content: center;
             width: 100%;
             padding-top: 20px;
-
+            transition: 0.3s;
             .nav-background {
                 background: linear-gradient(
                     180deg,
@@ -169,6 +168,7 @@ header {
                 transform: translateX(-9%) translateY(-25%) rotate(45deg);
             }
         }
+
 
         .nav-background.active {
             top: 0;

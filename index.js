@@ -2,7 +2,9 @@ start();
 
 function start() {
     const navButtons = document.querySelectorAll('ul a');
-    const nav = document.querySelector('.nav-background');
+    const navBackground = document.querySelector('.nav-background');
+    const nav = document.querySelector('nav');
+    const hamburgerMenu = document.querySelector('.hamburger');
 
     const aboutSection = document.querySelector('#about');
     const skillsSection = document.querySelector('#skills');
@@ -17,6 +19,7 @@ function start() {
     const contactsLink = document.querySelector('.contacts-link');
 
     let isClick = false;
+    let isMenuAcive = false;
 
     window.onscroll = function () {
         scrollHandler();
@@ -24,14 +27,16 @@ function start() {
 
     navButtons.forEach((e) => e.addEventListener('click', navButtonHandler));
 
+    hamburgerMenu.addEventListener('click', hamburgerMenuHandler);
+
     function scrollHandler() {
         const y = window.scrollY;
 
         if (y > 0) {
-            nav.classList.add('active');
+            navBackground.classList.add('active');
             navButtons.forEach((e) => e.classList.add('scroll'));
         } else if (y == 0) {
-            nav.classList.remove('active');
+            navBackground.classList.remove('active');
             navButtons.forEach((e) => e.classList.remove('scroll'));
             navButtons.forEach((e) => e.classList.remove('acitve'));
         }
@@ -79,5 +84,17 @@ function start() {
         setTimeout(() => {
             isClick = false;
         }, 1000);
+    }
+
+    function hamburgerMenuHandler() {
+        if(isMenuAcive) {
+            hamburgerMenu.classList.remove('active');
+            nav.classList.remove('active');
+        } else {
+            hamburgerMenu.classList.add('active');
+            nav.classList.add('active');
+        }
+
+        isMenuAcive = !isMenuAcive;
     }
 }

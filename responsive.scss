@@ -178,6 +178,74 @@
 }
 
 @media screen and (max-width: 720px) {
+    header .header-wrapper {
+        nav {
+            transform: translateX(-100%);
+            transition: 0.3s;
+            width: 200px;
+            height: 100vh;
+            padding: 20px;
+            background: linear-gradient(
+                180deg,
+                rgba(84, 75, 92, 0.8687850140056023) 0%,
+                rgba(147, 134, 137, 1) 100%
+            );
+
+            a:nth-child(1)::after,
+            a:nth-child(2)::after {
+                left: 15px;
+            }
+        }
+
+        nav.active {
+            transform: translateX(0);
+        }
+
+        .hamburger {
+            position: fixed;
+            z-index: 10;
+            display: inline;
+            top: 5px;
+            right: 12px;
+            cursor: pointer;
+            div {
+                background: rgb(162, 103, 105);
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                transition: all 0.3s ease-in-out;
+                border-radius: 20px;
+            }
+        }
+
+        .hamburger:hover div {
+            background: rgb(187, 118, 121);
+        }
+
+        .hamburger.active {
+            div:nth-child(2) {
+                opacity: 0;
+            }
+
+            div:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            div:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+
+        .nav-background {
+            display: none;
+        }
+
+        ul {
+            flex-direction: column;
+        }
+    }
+
     .personal-info {
         .img-wrapper {
             top: -89%;
@@ -287,7 +355,6 @@
                 font-size: 1rem;
             }
         }
-
     }
 
     section.projects div {
@@ -320,8 +387,8 @@
     }
 
     .grid-wrapper .grid {
-       display: flex;   
-       flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
 
     .certificates {
