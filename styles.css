@@ -13,6 +13,24 @@ html {
   scroll-behavior: smooth;
 }
 
+@media screen and (max-width: 920px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  html {
+    font-size: 13px;
+  }
+}
+
 body {
   max-height: 100vh;
 }
@@ -199,6 +217,7 @@ header .header-wrapper .nav-background.active {
   background: linear-gradient(182deg, #cfb1ac 0%, #e9dbd2 100%);
   padding: 4% 15%;
   text-align: center;
+  line-height: 40px;
 }
 
 .about h3 {
@@ -535,12 +554,12 @@ header .header-wrapper .nav-background.active {
 }
 
 .contacts .contacts-wrapper {
-  padding: 3% 8%;
+  padding: 5%;
   border-radius: 8px;
   background: -webkit-gradient(linear, left top, left bottom, from(#e9dbd2), to(#dac4bd));
   background: linear-gradient(180deg, #e9dbd2 0%, #dac4bd 100%);
-  width: 40%;
-  line-height: 40px;
+  width: 30%;
+  line-height: 50px;
 }
 
 .contacts a, .contacts p {

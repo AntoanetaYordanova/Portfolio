@@ -16,6 +16,8 @@ function start() {
     const certificatesLink = document.querySelector('.certificates-link');
     const contactsLink = document.querySelector('.contacts-link');
 
+    let isClick = false;
+
     window.onscroll = function () {
         scrollHandler();
     };
@@ -34,24 +36,28 @@ function start() {
             navButtons.forEach((e) => e.classList.remove('acitve'));
         }
 
-        if(y <= getPosition(headerSection)){
-            navButtons.forEach((e) => e.classList.remove('active'));
-        } else if (y >= getPosition(aboutSection) && y <= getPosition(skillsSection)) {
-            navButtons.forEach((e) => e.classList.remove('active'));
-            aboutLink.classList.add('active');
-        } else if(y >= getPosition(skillsSection) && y <= getPosition(projectsSection)) {
-            navButtons.forEach((e) => e.classList.remove('active'));
-            skillsLink.classList.add('active');
-        } else if(y >= getPosition(projectsSection) && y <= getPosition(certificatesSection)) {
-            navButtons.forEach((e) => e.classList.remove('active'));
-            projectsLink.classList.add('active');
-        } else if (y >= getPosition(certificatesSection) && !((window.innerHeight + window.scrollY) >= document.body.scrollHeight)) {
-            navButtons.forEach((e) => e.classList.remove('active'));
-            certificatesLink.classList.add('active');
-        } else if ((window.innerHeight + window.scrollY) >= (document.body.scrollHeight)){
-            navButtons.forEach((e) => e.classList.remove('active'));
-            contactsLink.classList.add('active');
+        if(!isClick) {
+            if(y <= getPosition(headerSection)){
+                navButtons.forEach((e) => e.classList.remove('active'));
+            } else if (y >= getPosition(aboutSection) && y <= getPosition(skillsSection)) {
+                navButtons.forEach((e) => e.classList.remove('active'));
+                aboutLink.classList.add('active');
+            } else if(y >= getPosition(skillsSection) && y <= getPosition(projectsSection)) {
+                navButtons.forEach((e) => e.classList.remove('active'));
+                skillsLink.classList.add('active');
+            } else if(y >= getPosition(projectsSection) && y <= getPosition(certificatesSection)) {
+                navButtons.forEach((e) => e.classList.remove('active'));
+                projectsLink.classList.add('active');
+            } else if (y >= getPosition(certificatesSection) && !((window.innerHeight + window.scrollY) >= document.body.scrollHeight)) {
+                navButtons.forEach((e) => e.classList.remove('active'));
+                certificatesLink.classList.add('active');
+            } else if ((window.innerHeight + window.scrollY) >= (document.body.scrollHeight)){
+                navButtons.forEach((e) => e.classList.remove('active'));
+                contactsLink.classList.add('active');
+            }
         }
+
+        
     }   
 
     function getPosition(element) {
@@ -67,7 +73,11 @@ function start() {
     }
 
     function navButtonHandler(ev) {
+        isClick = true;
         navButtons.forEach((el) => el.classList.remove('active'));
         ev.currentTarget.classList.add('active');
+        setTimeout(() => {
+            isClick = false;
+        }, 1000);
     }
 }
