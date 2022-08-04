@@ -41,7 +41,10 @@ function start() {
             navButtons.forEach((e) => e.classList.remove('acitve'));
         }
 
-        if(!isClick) {
+        let documentHeight = document.body.scrollHeight;
+        let currentScroll = window.scrollY + window.innerHeight;
+
+        if(!isClick || documentHeight >= currentScroll) {
             if(y <= getPosition(headerSection)){
                 navButtons.forEach((e) => e.classList.remove('active'));
             } else if (y >= getPosition(aboutSection) && y <= getPosition(skillsSection)) {
@@ -53,16 +56,14 @@ function start() {
             } else if(y >= getPosition(projectsSection) && y <= getPosition(certificatesSection)) {
                 navButtons.forEach((e) => e.classList.remove('active'));
                 projectsLink.classList.add('active');
-            } else if (y >= getPosition(certificatesSection) && !((window.innerHeight + window.scrollY) >= document.body.scrollHeight)) {
+            } else if (y >= getPosition(certificatesSection) && !(currentScroll + 5 >= documentHeight)) {
                 navButtons.forEach((e) => e.classList.remove('active'));
                 certificatesLink.classList.add('active');
-            } else if ((window.innerHeight + window.scrollY) >= (document.body.scrollHeight)){
+            } else if (currentScroll + 5 >= documentHeight){
                 navButtons.forEach((e) => e.classList.remove('active'));
                 contactsLink.classList.add('active');
             }
         }
-
-        
     }   
 
     function getPosition(element) {
