@@ -18,14 +18,11 @@ function start() {
     const certificatesLink = document.querySelector('.certificates-link');
     const contactsLink = document.querySelector('.contacts-link');
 
-    let isClick = false;
     let isMenuAcive = false;
 
     window.onscroll = function () {
         scrollHandler();
     };
-
-    navButtons.forEach((e) => e.addEventListener('click', navButtonHandler));
 
     hamburgerMenu.addEventListener('click', hamburgerMenuHandler);
 
@@ -44,27 +41,37 @@ function start() {
         let documentHeight = document.body.scrollHeight;
         let currentScroll = window.scrollY + window.innerHeight;
 
-        if(!isClick || documentHeight >= currentScroll) {
-            if(y <= getPosition(headerSection)){
-                navButtons.forEach((e) => e.classList.remove('active'));
-            } else if (y >= getPosition(aboutSection) && y <= getPosition(skillsSection)) {
-                navButtons.forEach((e) => e.classList.remove('active'));
-                aboutLink.classList.add('active');
-            } else if(y >= getPosition(skillsSection) && y <= getPosition(projectsSection)) {
-                navButtons.forEach((e) => e.classList.remove('active'));
-                skillsLink.classList.add('active');
-            } else if(y >= getPosition(projectsSection) && y <= getPosition(certificatesSection)) {
-                navButtons.forEach((e) => e.classList.remove('active'));
-                projectsLink.classList.add('active');
-            } else if (y >= getPosition(certificatesSection) && !(currentScroll + 5 >= documentHeight)) {
-                navButtons.forEach((e) => e.classList.remove('active'));
-                certificatesLink.classList.add('active');
-            } else if (currentScroll + 5 >= documentHeight){
-                navButtons.forEach((e) => e.classList.remove('active'));
-                contactsLink.classList.add('active');
-            }
+        if (y <= getPosition(headerSection)) {
+            navButtons.forEach((e) => e.classList.remove('active'));
+        } else if (
+            y >= getPosition(aboutSection) - 200 &&
+            y <= getPosition(skillsSection) - 150
+        ) {
+            navButtons.forEach((e) => e.classList.remove('active'));
+            aboutLink.classList.add('active');
+        } else if (
+            y >= getPosition(skillsSection) - 150 &&
+            y <= getPosition(projectsSection) - 100
+        ) {
+            navButtons.forEach((e) => e.classList.remove('active'));
+            skillsLink.classList.add('active');
+        } else if (
+            y >= getPosition(projectsSection) - 100 &&
+            y <= getPosition(certificatesSection) - 100
+        ) {
+            navButtons.forEach((e) => e.classList.remove('active'));
+            projectsLink.classList.add('active');
+        } else if (
+            y >= getPosition(certificatesSection) - 100 &&
+            !(currentScroll + 5 >= documentHeight)
+        ) {
+            navButtons.forEach((e) => e.classList.remove('active'));
+            certificatesLink.classList.add('active');
+        } else if (currentScroll + 5 >= documentHeight) {
+            navButtons.forEach((e) => e.classList.remove('active'));
+            contactsLink.classList.add('active');
         }
-    }   
+    }
 
     function getPosition(element) {
         var yPosition = 0;
@@ -78,17 +85,8 @@ function start() {
         return yPosition;
     }
 
-    function navButtonHandler(ev) {
-        isClick = true;
-        navButtons.forEach((el) => el.classList.remove('active'));
-        ev.currentTarget.classList.add('active');
-        setTimeout(() => {
-            isClick = false;
-        }, 1000);
-    }
-
     function hamburgerMenuHandler() {
-        if(isMenuAcive) {
+        if (isMenuAcive) {
             hamburgerMenu.classList.remove('active');
             nav.classList.remove('active');
         } else {
