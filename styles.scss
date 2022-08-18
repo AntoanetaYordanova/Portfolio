@@ -4,7 +4,6 @@ $menu-font-size-small: 0.9rem;
 $body-font-size: 1.7rem;
 $section-heading-font-size: 2.3rem;
 
-
 $main-color-light: rgb(236, 226, 208);
 $main-color-dark: rgb(213, 185, 178);
 $secondary-color-light: rgb(191, 181, 175);
@@ -169,7 +168,6 @@ header {
             }
         }
 
-
         .nav-background.active {
             top: 0;
         }
@@ -217,11 +215,11 @@ header {
             }
 
             svg.linkedin:hover {
-                fill: rgb(10, 102, 194);;
+                fill: rgb(10, 102, 194);
             }
 
             svg.github:hover {
-                fill: rgb(0,0,0);
+                fill: rgb(0, 0, 0);
             }
         }
     }
@@ -401,7 +399,7 @@ header {
                 bottom: 25px;
                 width: 100%;
                 text-align: center;
-                transform: translateY(100px) ;
+                transform: translateY(100px);
                 transition: 0.5s;
 
                 svg {
@@ -440,7 +438,7 @@ header {
         }
 
         .project-card:hover {
-            box-shadow: 1px 1px 14px 0px rgba(0,0,0,0.75);
+            box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.75);
         }
 
         .project-card:hover img {
@@ -476,7 +474,7 @@ header {
         @include section-heading;
         text-align: center;
         color: $secondary-color-dark;
-        margin-bottom: 50px;    
+        margin-bottom: 50px;
     }
 
     .links-wrapper {
@@ -508,7 +506,6 @@ header {
             &::after {
                 width: 100%;
             }
-           
         }
     }
 }
@@ -523,24 +520,28 @@ header {
     .contacts-wrapper {
         padding: 5%;
         border-radius: 8px;
-        background: -webkit-gradient(linear, left top, left bottom, from(#e9dbd2), to(#dac4bd));
+        background: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            from(#e9dbd2),
+            to(#dac4bd)
+        );
         background: linear-gradient(180deg, #e9dbd2 0%, #dac4bd 100%);
         width: 30%;
         line-height: 50px;
     }
 
-    a, p {
+    a,
+    p {
         position: relative;
-    }
-    
-    p:nth-child(1), p:nth-child(2) {
-        padding-left: 40px;
     }
 
     p:nth-child(1) {
-       svg {
-        top: 5px;
-       }
+        padding-left: 40px;
+        svg {
+            top: 5px;
+        }
     }
 
     svg {
@@ -561,8 +562,6 @@ header {
         fill: rgb(10, 102, 194);
     }
 
-
-
     h3 {
         @include section-heading;
         text-align: center;
@@ -574,7 +573,7 @@ header {
     }
 }
 
-//FOOTER    
+//FOOTER
 
 footer {
     text-align: center;
@@ -583,6 +582,3 @@ footer {
     background: rgb(131, 120, 128);
     padding: 20px;
 }
-
-
-

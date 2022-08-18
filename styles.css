@@ -564,11 +564,12 @@ header .header-wrapper .nav-background.active {
   line-height: 50px;
 }
 
-.contacts a, .contacts p {
+.contacts a,
+.contacts p {
   position: relative;
 }
 
-.contacts p:nth-child(1), .contacts p:nth-child(2) {
+.contacts p:nth-child(1) {
   padding-left: 40px;
 }
 
